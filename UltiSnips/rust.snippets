@@ -4,7 +4,7 @@
 
 priority -50
 
-snippet fn "fn name(?) -> ? {}"
+snippet fn "pub fn name(?) -> ? {}"
 fn ${1:function_name}($2)${3/..*/ -> /}$3 {
 	${VISUAL}$0
 }

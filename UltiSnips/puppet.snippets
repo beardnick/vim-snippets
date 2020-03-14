@@ -67,8 +67,7 @@ endsnippet
 
 snippet exec "Exec resource type" b
 exec { '${1:command}':
-	command => "${2:$1}",
-	user    => "${3:root}",
+	refreshonly => true,
 }
 endsnippet
 

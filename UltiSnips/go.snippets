@@ -83,7 +83,7 @@ func ${1:handler}(${2:w} http.ResponseWriter, ${3:r} *http.Request) {
 endsnippet
 
 # types and variables
-snippet map "Map type" b
+snippet map "Map type" w
 map[${1:keytype}]${2:valtype}
 endsnippet
 
@@ -112,4 +112,31 @@ snippet err "Basic error handling" b
 if err != nil {
 	log.${1:Fatal}(err)
 }
+endsnippet
+
+snippet "([a-zA-Z.]+).append" "Description" r
+`!p snip.rv = match.group(1)` = append(`!p snip.rv = match.group(1)`, ${1:value})
+endsnippet
+
+
+
+#snippet ret "return" b
+#return ${1:value}, retval${0}
+#endsnippet
+
+#snippet retval "return value" i
+#${1:value}, retval${2}
+#endsnippet
+
+snippet unimp "unimplemented function" b
+panic("not implemented")
+endsnippet
+
+
+snippet out "println" b
+fmt.Println(${1:text})
+endsnippet
+
+snippet ret "return" b
+return ${1:value}
 endsnippet
